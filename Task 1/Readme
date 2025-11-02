@@ -57,21 +57,22 @@ All UI updates occur instantly without page reload.
 
 
 1️⃣ Home Page
+![alt text](image.png)
 
 
 Description: The main interface showing the input field and the list of current tasks.
 
 2️⃣ Add Task
-
+![alt text](image-1.png)
 
 Description: Demonstrates how users can add a new task using the input bar.
 
 3️⃣ Edit Task
-
+![alt text](image-2.png)
 
 Description: Shows how a user can modify an existing task.
 
 4️⃣ Delete Task
-
+![alt text](image-3.png)
 
 Description: Example of a user removing a task from the list.
