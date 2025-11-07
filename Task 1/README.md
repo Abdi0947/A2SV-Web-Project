@@ -80,7 +80,8 @@ Description: Shows how a user can modify an existing task.
 
 4️⃣ Delete Task
 
-<img width="535" height="277" alt="image" src="https://github.com/user-attachments/assets/b156c8f5-53aa-48f9-97c2-747b3b826c07" />
+<img width="1280" height="556" alt="image" src="Task 1\image-4.png" />
+
 
 
 Description: Example of a user removing a task from the list.
