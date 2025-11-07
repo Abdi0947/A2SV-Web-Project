@@ -57,6 +57,7 @@ All UI updates occur instantly without page reload.
 
 
 1️⃣ Home Page
+
 <img width="535" height="277" alt="image" src="https://github.com/user-attachments/assets/b156c8f5-53aa-48f9-97c2-747b3b826c07" />
 
 
@@ -64,18 +65,21 @@ All UI updates occur instantly without page reload.
 Description: The main interface showing the input field and the list of current tasks.
 
 2️⃣ Add Task
+
 <img width="442" height="358" alt="image" src="https://github.com/user-attachments/assets/551a4c06-a611-4eee-bf82-16f6e5555788" />
 
 
 Description: Demonstrates how users can add a new task using the input bar.
 
 3️⃣ Edit Task
+
 <img width="1280" height="556" alt="image" src="https://github.com/user-attachments/assets/e126d49e-f17d-4eab-bca9-32897c51bbe4" />
 
 
 Description: Shows how a user can modify an existing task.
 
 4️⃣ Delete Task
+
 <img width="535" height="277" alt="image" src="https://github.com/user-attachments/assets/b156c8f5-53aa-48f9-97c2-747b3b826c07" />
 
 
