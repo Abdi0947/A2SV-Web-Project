@@ -5,18 +5,24 @@ You can add, remove, update, mark tasks as completed, and view your tasks direct
 
 ## 🚀 Features
     Home
+    
 ![alt text](image.png)
 
 - Add new tasks
+  
 ![alt text](image-1.png)
 
 - Remove tasks
+  
 ![alt text](image-2.png)
 
 - Update existing tasks
+  
 ![alt text](image-4.png)
+
 - Mark tasks as completed
 - Display all tasks
+  
 ![alt text](image-3.png)
 
 ## 🛠️ How to Run
