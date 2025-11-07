@@ -80,7 +80,7 @@ Description: Shows how a user can modify an existing task.
 
 4️⃣ Delete Task
 
-<img width="1280" height="556" alt="image" src="(https://github.com/Abdi0947/A2SV-Web-Project/blob/main/Task%201/image-4.png?raw=true)" />
+[<img width="1280" height="556" alt="image" src="(https://github.com/Abdi0947/A2SV-Web-Project/blob/main/Task%201/image-4.png?raw=true)" />](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/Task%201/image-4.png?raw=true)
 
 
 
