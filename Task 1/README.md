@@ -76,7 +76,7 @@ Description: Demonstrates how users can add a new task using the input bar.
 Description: Shows how a user can modify an existing task.
 
 4️⃣ Delete Task
-![Uploading image.png…]()
+<img width="535" height="277" alt="image" src="https://github.com/user-attachments/assets/b156c8f5-53aa-48f9-97c2-747b3b826c07" />
 
 
 Description: Example of a user removing a task from the list.
