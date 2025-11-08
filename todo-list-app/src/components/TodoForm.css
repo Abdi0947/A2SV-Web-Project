@@ -1,38 +1,294 @@
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* Center the form vertically and horizontally */
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.fade-in {
+.todo-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: backgroundMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes backgroundMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Card style for form */
+.todo-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 700px;
   animation: fadeIn 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
+.todo-card::-webkit-scrollbar {
+  width: 8px;
+}
 
+.todo-card::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.todo-card::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 10px;
+}
+
+.todo-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+/* Form Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.title-icon {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Form Styling */
+.todo-form {
+  width: 100%;
+}
+
+.input-group-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.input-wrapper {
+  flex: 1;
+  min-width: 280px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.input-animate {
+  height: 56px !important;
+  border-radius: 12px !important;
+  border: 2px solid #e9ecef !important;
+  padding: 0.75rem 3rem 0.75rem 1.25rem !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease-in-out !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.input-animate:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+.input-animate:focus + .input-icon {
+  opacity: 1;
+}
+
+.input-animate::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* Button Styling */
+.btn-animate {
+  height: 56px !important;
+  padding: 0 2rem !important;
+  border-radius: 12px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  white-space: nowrap;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.btn-animate:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5) !important;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+}
+
+.btn-animate:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+}
+
+.btn-animate:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.btn-text {
+  font-size: 1rem;
+}
+
+/* Animations */
 @keyframes slideIn {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% { 
+    opacity: 0; 
+    transform: translateY(-30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 .slide-in {
   animation: slideIn 0.8s ease-out;
 }
 
-.input-animate {
-  transition: all 0.3s ease-in-out;
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
 }
 
-.input-animate:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 8px rgba(13, 110, 253, 0.5);
-  transform: scale(1.02);
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
 }
 
-.btn-animate {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 1rem;
+  }
+
+  .todo-card {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  .input-group-wrapper {
+    flex-direction: column;
+  }
+
+  .input-wrapper {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .btn-animate {
+    width: 100%;
+    min-width: 100%;
+  }
 }
 
-.btn-animate:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.75rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .title-icon {
+    font-size: 1.5rem;
+  }
+
+  .todo-card {
+    padding: 1.5rem 1rem;
+  }
 }
