@@ -52,7 +52,9 @@ src/
 │   ├── TodoItems.tsx
 
 │   └── TodoItems.css
+
 │
+
 └── App.tsx
 
 💡 All CSS files are stored next to their component for better modularity.
