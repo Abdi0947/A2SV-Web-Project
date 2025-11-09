@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📝 Todo List Form (React + TypeScript + Bootstrap + CSS Animations)
+📌 Overview
+This project is a modern Todo List application built with React, TypeScript, and Bootstrap 5.
+It includes smooth animations, a responsive layout, and a clean UI.
+The app allows users to add tasks through an animated input form — and can be easily extended to display and manage todo items.
 
-Currently, two official plugins are available:
+✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Home
 
-## React Compiler
+![alt text](image.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+➕ Add: Create new tasks easily using the input form.
 
-## Expanding the ESLint configuration
+![alt text](image-1.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✏️ Edit: Click the Edit button beside any task — the selected task appears in the input field, ready to be modified.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![alt text](image-2.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+❌ Delete: Instantly remove a task by clicking the Delete button.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![alt text](image-3.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🎨 Animated transitions with focus, hover, and entry effects.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+📱 Fully responsive layout that adapts to any screen size.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🛠️ Technologies Used
+React (TypeScript)
+
+Bootstrap 5
+
+CSS3 Animations & Transitions
+
+Vite / Create React App
+
+📂 Folder Structure
+css
+Copy code
+src/
+│
+├── components/
+│   ├── TodoForm.tsx
+│   ├── TodoForm.css
+│   ├── TodoItems.tsx
+│   └── TodoItems.css
+│
+└── App.tsx
+💡 All CSS files are stored next to their component for better modularity.
+
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/Abdi0947/todo-form.git
+cd todo-form
+2️⃣ Install Dependencies
+
+npm install
+3️⃣ Start the Development Server
+npm run dev
+
+4️⃣ Open in Browser
+Visit 👉 http://localhost:5173 (or http://localhost:3000)
+
+🧩 Components Overview
+🧾 TodoForm.tsx
+Handles input field and button for adding new tasks
+
+Includes smooth fade-in and focus animations
+
+Uses Bootstrap grid and custom CSS transitions
+
+📋 TodoItems.tsx
+Displays the list of added todos (you can add functionality later)
+
+Designed to match the style and animation of the form
+
+Supports hover and delete animations (optional extension)
+
+🎨 UI Highlights
+Centered form with animated entry (fade-in, slide-in)
+
+Input and button perfectly aligned with equal height
+
+Soft card shadow and rounded corners for a modern look
+
+Responsive design for both desktop and mobile
+
+🧠 Future Enhancements
+Add state management (useState or Redux)
+
+Implement Edit and Delete actions
+
+Save todos to LocalStorage
+
+Add task completion animations
+
+Integrate Framer Motion for advanced transitions
+
+
+👨‍💻 Author
+Abdi Debela
+💼 GitHub: Abdi0947
+📧 Email: debelaabdi3@gmail.com

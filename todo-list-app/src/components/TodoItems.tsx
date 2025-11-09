@@ -32,7 +32,7 @@ const TodoItems: React.FC<TodoItemsProps> = ({ todos, onDelete, onToggleComplete
       setEditingId(null);
       setEditValue('');
     }
-    // If empty, don't save and keep in edit mode (user can press Escape to cancel)
+   
   };
 
   const handleCancel = () => {
