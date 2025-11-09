@@ -1,6 +1,8 @@
 
 📝 Todo List Form (React + TypeScript + Bootstrap + CSS Animations)
+
 📌 Overview
+
 This project is a modern Todo List application built with React, TypeScript, and Bootstrap 5.
 It includes smooth animations, a responsive layout, and a clean UI.
 The app allows users to add tasks through an animated input form — and can be easily extended to display and manage todo items.
@@ -51,20 +53,28 @@ src/
 💡 All CSS files are stored next to their component for better modularity.
 
 🚀 Getting Started
+
 1️⃣ Clone the Repository
-git clone https://github.com/Abdi0947/todo-form.git
+
+git clone https://github.com/Abdi0947/A2SV-web-Project/todo-list-app.git
+
 cd todo-form
+
 2️⃣ Install Dependencies
 
 npm install
+
 3️⃣ Start the Development Server
+
 npm run dev
 
 4️⃣ Open in Browser
+
 Visit 👉 http://localhost:5173 (or http://localhost:3000)
 
 🧩 Components Overview
 🧾 TodoForm.tsx
+
 Handles input field and button for adding new tasks
 
 Includes smooth fade-in and focus animations
@@ -72,6 +82,7 @@ Includes smooth fade-in and focus animations
 Uses Bootstrap grid and custom CSS transitions
 
 📋 TodoItems.tsx
+
 Displays the list of added todos (you can add functionality later)
 
 Designed to match the style and animation of the form
@@ -88,6 +99,7 @@ Soft card shadow and rounded corners for a modern look
 Responsive design for both desktop and mobile
 
 🧠 Future Enhancements
+
 Add state management (useState or Redux)
 
 Implement Edit and Delete actions
@@ -100,6 +112,9 @@ Integrate Framer Motion for advanced transitions
 
 
 👨‍💻 Author
+
 Abdi Debela
+
 💼 GitHub: Abdi0947
+
 📧 Email: debelaabdi3@gmail.com
