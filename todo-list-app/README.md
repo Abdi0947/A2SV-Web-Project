@@ -39,17 +39,22 @@ CSS3 Animations & Transitions
 Vite / Create React App
 
 📂 Folder Structure
-css
-Copy code
+
 src/
+
 │
 ├── components/
+
 │   ├── TodoForm.tsx
+
 │   ├── TodoForm.css
+
 │   ├── TodoItems.tsx
+
 │   └── TodoItems.css
 │
 └── App.tsx
+
 💡 All CSS files are stored next to their component for better modularity.
 
 🚀 Getting Started
