@@ -4,47 +4,30 @@ Simple Contact Form using React & Custom useForm Hook
 
 📘 Project Description
 
-This project is a simple and responsive Contact Form built using React and a custom useForm hook.
+TThis project is a simple and responsive Contact Form built with React and a custom useForm hook.
+
 The form includes:
 
-Name (required)
+🧑 Name (required)
 
-Email (required + email format validation)
+📧 Email (required + email format validation)
 
-Message (required)
+✍️ Message (required)
 
-The goal of this task is to demonstrate:
-
-Understanding of React hooks
-
-Managing form state
-
-Creating reusable validation logic
-
-Basic frontend validation
-
-Displaying validation errors
-
-Handling form submission
-
-Creating a clean UI
+Purpose:
+Demonstrate understanding of React hooks, form state management, validation, and basic UI styling.
 
 🧩 Features
 
-✔ Custom useForm hook
+✅ Custom useForm hook
 
-✔ Live error validation
+⚠️ Live validation errors
 
-✔ Required field checks
+📨 Required fields check
 
-✔ Email format validation
+📬 Email format validation
 
-✔ Responsive UI
-
-✔ Easy to extend
-
-✔ Clean and reusable structure
-
+💻 Responsive and clean UI
 ### 🏠 Home (Initial View)
 
 When the user first opens the Contact Form, the page looks like this:
