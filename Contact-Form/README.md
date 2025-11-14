@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+📌 Project Title:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple Contact Form using React & Custom useForm Hook
 
-Currently, two official plugins are available:
+📘 Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a simple and responsive Contact Form built using React and a custom useForm hook.
+The form includes:
 
-## React Compiler
+Name (required)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Email (required + email format validation)
 
-## Expanding the ESLint configuration
+Message (required)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The goal of this task is to demonstrate:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Understanding of React hooks
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Managing form state
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Creating reusable validation logic
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Basic frontend validation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Displaying validation errors
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Handling form submission
+
+Creating a clean UI
+
+🧩 Features
+
+✔ Custom useForm hook
+✔ Live error validation
+✔ Required field checks
+✔ Email format validation
+✔ Responsive UI
+✔ Easy to extend
+✔ Clean and reusable structure
+
+### 🏠 Home (Initial View)
+
+When the user first opens the Contact Form, the page looks like this:
+
+- All fields are empty  
+- No errors are displayed  
+- The user can start typing their information
+
+![alt text](image.png)
+
+### ❗ Validation Errors (Empty Fields)
+
+If the user clicks **Submit** without typing anything, the following errors appear:
+
+- **Name is required**
+- **Email is required**
+- **Message is required**
+
+Each error appears below its respective input field.
+
+![alt text](image-1.png)
+
+### ❌ Invalid Email Error
+
+When the user enters an incorrect email format (example: "hello@" or "abc.com") and clicks Submit,  
+the form displays:
+
+**Invalid email format**
+
+This error appears only under the Email field.
+
+![alt text](image-2.png)
+
+### ✅ Successful Submission
+
+When all fields are filled correctly and the user clicks **Submit**, the form submits successfully.
+
+What happens:
+
+- All validation checks pass  
+- No error messages are shown  
+- A success alert appears (example: “Form submitted successfully!”)  
+- The form data is logged in the console  
+- The user confirms the form was sent
+
+![alt text](image-3.png)
+
+## 👤 Developer
+
+```text
+Name   : Abdi Debela
+GitHub : Abdi0947
+Email  : debelaabdi3@gmail.com
