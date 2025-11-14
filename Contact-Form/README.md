@@ -32,11 +32,17 @@ Creating a clean UI
 🧩 Features
 
 ✔ Custom useForm hook
+
 ✔ Live error validation
+
 ✔ Required field checks
+
 ✔ Email format validation
+
 ✔ Responsive UI
+
 ✔ Easy to extend
+
 ✔ Clean and reusable structure
 
 ### 🏠 Home (Initial View)
