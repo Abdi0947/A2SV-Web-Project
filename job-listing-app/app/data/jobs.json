@@ -1,0 +1,240 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Frontend Developer",
+    "company": "Tech Solutions Inc.",
+    "address": {
+      "street": "123 Tech Street",
+      "city": "Silicon Valley",
+      "state": "CA"
+    },
+    "description": "We are looking for a skilled Senior Frontend Developer to join our dynamic team. You will be responsible for building and maintaining high-quality web applications.",
+    "jobType": "Full-time",
+    "categories": ["Engineering", "IT"],
+    "logoUrl": "/logo1.jpeg",
+    "responsibilities": [
+      "Develop and maintain web applications using React.js and other frontend technologies.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Optimize applications for maximum speed and scalability.",
+      "Ensure the technical feasibility of UI/UX designs."
+    ],
+    "detail": [
+      {
+        "title": "Bachelor's degree in Computer Science or related field",
+        "description": "Minimum 5 years of experience in frontend development."
+      },
+      {
+        "title": "Proficiency in JavaScript, HTML, CSS, and modern frontend frameworks (e.g., React.js)",
+        "description": "Experience with version control systems like Git."
+      },
+      {
+        "title": "Strong problem-solving skills and attention to detail",
+        "description": "Excellent communication and teamwork abilities."
+      },
+      {
+        "title": "Experience with responsive and adaptive design",
+        "description": "Familiarity with RESTful APIs and backend integration."
+      }
+    ],
+    "about": {
+      "postedOn": "August 1, 2023",
+      "deadline": "August 31, 2023",
+      "startDate": "September 15, 2023",
+      "endDate": "September 15, 2024"
+    },
+    "eventLocation": "The online event will be hosted via Zoom.",
+    "skills": ["JavaScript", "React.js", "CSS", "HTML", "Git"]
+  },
+  {
+    "id": 2,
+    "title": "Data Scientist",
+    "company": "Data Insights LLC",
+    "address": {
+      "street": "456 Data Drive",
+      "city": "New York",
+      "state": "NY"
+    },
+    "description": "Join our team as a Data Scientist and help us turn data into actionable insights. You will work with large datasets to develop predictive models and analyze trends.",
+    "jobType": "Full-time",
+    "categories": ["Data Science", "Analytics"],
+    "logoUrl": "/logo2.jpeg",
+    "responsibilities": [
+      "Analyze large datasets to extract meaningful insights.",
+      "Develop and implement machine learning models.",
+      "Collaborate with cross-functional teams to understand business needs.",
+      "Communicate findings to stakeholders through reports and presentations."
+    ],
+    "detail": [
+      {
+        "title": "Master's degree in Data Science, Statistics, or related field",
+        "description": "Minimum 3 years of experience in data science or analytics."
+      },
+      {
+        "title": "Proficiency in Python, R, and SQL",
+        "description": "Experience with machine learning libraries (e.g., scikit-learn, TensorFlow)."
+      },
+      {
+        "title": "Strong analytical and problem-solving skills",
+        "description": "Excellent communication and presentation abilities."
+      },
+      {
+        "title": "Experience with data visualization tools (e.g., Tableau, Power BI)",
+        "description": "Familiarity with big data technologies (e.g., Hadoop, Spark)."
+      }
+    ],
+    "about": {
+      "postedOn": "July 15, 2023",
+      "deadline": "August 15, 2023",
+      "startDate": "September 1, 2023",
+      "endDate": "September 1, 2024"
+    },
+    "eventLocation": "The online event will be hosted via Microsoft Teams.",
+    "skills": ["Python", "R", "SQL", "Machine Learning", "Data Visualization"]
+  },
+  {
+    "id": 3,
+    "title": "Marketing Manager",
+    "company": "Creative Marketing Co.",
+    "address": {
+      "street": "789 Market Lane",
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "description": "We are seeking a talented Marketing Manager to lead our marketing efforts. You will be responsible for developing and executing marketing strategies to drive brand awareness and customer engagement.",
+    "jobType": "Full-time",
+    "categories": ["Marketing", "Management"],
+    "logoUrl": "/logo3.jpeg",
+    "responsibilities": [
+      "Develop and implement marketing strategies and campaigns.",
+      "Manage social media channels and online presence.",
+      "Conduct market research to identify trends and opportunities.",
+      "Collaborate with sales and product teams to align marketing efforts."
+    ],
+    "detail": [
+      {
+        "title": "Bachelor's degree in Marketing, Business, or related field",
+        "description": "Minimum 4 years of experience in marketing or related roles."
+      },
+      {
+        "title": "Proficiency in digital marketing tools and platforms",
+        "description": "Experience with SEO, SEM, and content marketing."
+      },
+      {
+        "title": "Strong leadership and project management skills",
+        "description": "Excellent communication and interpersonal abilities."
+      },
+      {
+        "title": "Creative thinking and problem-solving skills",
+        "description": "Familiarity with analytics tools (e.g., Google Analytics)."
+      }
+    ],
+    "about": {
+      "postedOn": "August 5, 2023",
+      "deadline": "September 5, 2023",
+      "startDate": "October 1, 2023",
+      "endDate": "October 1, 2024"
+    },
+    "eventLocation": "The online event will be hosted via Google Meet.",
+    "skills": [
+      "Digital Marketing",
+      "SEO",
+      "Content Creation",
+      "Project Management",
+      "Analytics"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "UX/UI Designer",
+    "company": "Design Studio",
+    "address": {
+      "street": "321 Creative Blvd",
+      "city": "Los Angeles",
+      "state": "CA"
+    },
+    "description": "We are looking for a creative UX/UI Designer to join our design team. You will be responsible for creating user-centered designs that enhance the user experience across our digital products.",
+    "jobType": "Full-time",
+    "categories": ["Design", "User Experience"],
+    "logoUrl": "/logo4.png",
+    "responsibilities": [
+      "Design user interfaces for web and mobile applications.",
+      "Conduct user research and usability testing.",
+      "Collaborate with developers and product managers to implement designs.",
+      "Create wireframes, prototypes, and visual designs."
+    ],
+    "detail": [
+      {
+        "title": "Bachelor's degree in Design, Human-Computer Interaction, or related field",
+        "description": "Minimum 3 years of experience in UX/UI design."
+      },
+      {
+        "title": "Proficiency in design tools (e.g., Sketch, Figma, Adobe XD)",
+        "description": "Experience with user research methodologies."
+      },
+      {
+        "title": "Strong portfolio showcasing UX/UI design skills",
+        "description": "Excellent communication and collaboration abilities."
+      },
+      {
+        "title": "Knowledge of front-end development (HTML, CSS, JavaScript) is a plus",
+        "description": "Familiarity with accessibility standards and best practices."
+      }
+    ],
+    "about": {
+      "postedOn": "July 20, 2023",
+      "deadline": "August 20, 2023",
+      "startDate": "September 10, 2023",
+      "endDate": "September 10, 2024"
+    },
+    "eventLocation": "The online event will be hosted via Webex.",
+    "skills": [
+      "UX Design",
+      "UI Design",
+      "Prototyping",
+      "User Research",
+      "Design Tools"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "CloudTech Solutions",
+    "address": { "street": "654 Cloud Ave", "city": "Seattle", "state": "WA" },
+    "description": "We are seeking a skilled DevOps Engineer to join our infrastructure team. You will be responsible for automating and optimizing our development and deployment processes.",
+    "jobType": "Full-time",
+    "categories": ["DevOps", "IT"],
+    "logoUrl": "/logo5.jpeg",
+    "responsibilities": [
+      "Design, implement, and manage CI/CD pipelines.",
+      "Automate infrastructure provisioning and configuration management.",
+      "Monitor system performance and troubleshoot issues.",
+      "Collaborate with development teams to ensure smooth deployments."
+    ],
+    "detail": [
+      {
+        "title": "Bachelor's degree in Computer Science or related field",
+        "description": "Minimum 4 years of experience in DevOps or related roles."
+      },
+      {
+        "title": "Proficiency in cloud platforms (e.g., AWS, Azure, GCP)",
+        "description": "Experience with containerization and orchestration tools (e.g., Docker, Kubernetes)."
+      },
+      {
+        "title": "Strong scripting skills (e.g., Python, Bash)",
+        "description": "Excellent problem-solving and communication abilities."
+      },
+      {
+        "title": "Experience with infrastructure as code (e.g., Terraform, Ansible)",
+        "description": "Familiarity with monitoring and logging tools."
+      }
+    ],
+    "about": {
+      "postedOn": "August 10, 2023",
+      "deadline": "September 10, 2023",
+      "startDate": "October 15, 2023",
+      "endDate": "October 15, 2024"
+    },
+    "eventLocation": "The online event will be hosted via Zoom.",
+    "skills": ["CI/CD", "Cloud Platforms", "Docker", "Kubernetes", "Scripting"]
+  }
+]
