@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opportunities Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --primary: #11153a;
+        --muted: #5b607d;
+        --accent: #6f6cff;
+        --border: #e4e7f5;
+        --bg: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #ffffff;
+        color: var(--primary);
+        font-size: 16px;
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 48px 12px 80px;
+      }
+
+      .page {
+        max-width: 1180px;
+        display: grid;
+        margin: 0 auto;
+        gap: 40px;
+      }
+
+      .panel {
+        background: #fff;
+        border-radius: 32px;
+        padding: 40px;
+      }
+
+      .panel-header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 32px;
+      }
+
+      .badge-label {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        color: var(--accent);
+        margin-bottom: 6px;
+        font-style: normal;
+      }
+
+      .panel-header h1 {
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.15;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .panel-header p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .sort {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      .sort button {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-weight: 600;
+        background: #fff;
+        color: var(--primary);
+        box-shadow: 0 8px 20px rgba(15, 19, 59, 0.1);
+        cursor: pointer;
+      }
+
+      .jobs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .job-card {
+        display: flex;
+        gap: 20px;
+        border-radius: 28px;
+        padding: 26px;
+        border: 1px solid var(--border);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+        cursor: pointer;
+      }
+
+      .job-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 50px rgba(14, 20, 64, 0.12);
+      }
+
+      .job-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 22px;
+        color: #c99000;
+        background: #fff6da;
+      }
+
+      .job-content h3 {
+        font-size: 21px;
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+
+      .job-meta {
+        color: #4a4f6b;
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+
+      .job-description {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tag {
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        text-transform: capitalize;
+      }
+
+      .tag.green {
+        background: #ebfff6;
+        color: #117743;
+        border-color: #bcefd4;
+      }
+
+      .tag.orange {
+        background: #fff3e6;
+        color: #ff8a00;
+        border-color: #ffd5af;
+      }
+
+      .tag.purple {
+        background: #f0edff;
+        color: #4c48ff;
+        border-color: #d5cfff;
+      }
+
+      .tag.blue {
+        background: #e7f5ff;
+        color: #1585d8;
+        border-color: #c1e6ff;
+      }
+
+      .detail-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) 320px;
+        gap: 28px;
+      }
+
+      .detail-body {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .detail-body section h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #0f1231;
+      }
+
+      .detail-body section p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .check-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .check-item {
+        display: flex;
+        gap: 10px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      .check-item span {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #eafff3;
+        color: #1ea868;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .candidate-card {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 14px;
+      }
+
+      .candidate-card p:first-child {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .info-pill {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-radius: 16px;
+        border: 1px dashed var(--border);
+        padding: 14px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .icon-location {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        background: #fff;
+        color: #6a6eff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 2px 6px rgba(106, 110, 255, 0.15);
+      }
+
+      .sidebar {
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        padding: 24px;
+        background: #fcfcff;
+        height: fit-content;
+      }
+
+      .sidebar-section + .sidebar-section {
+        margin-top: 24px;
+      }
+
+      .sidebar-section h3 {
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 11px;
+        color: #9da1c4;
+        margin-bottom: 14px;
+      }
+
+      .sidebar-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .sidebar-grid .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px 14px;
+        font-size: 14px;
+        color: #4a4f6b;
+      }
+
+      .skill-chip {
+        border-radius: 999px;
+        padding: 6px 14px;
+        border: 1px solid #d9def3;
+        font-size: 12px;
+        font-weight: 600;
+        color: #3c4265;
+        background: #fff;
+      }
+
+      .detail-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding: 14px 18px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        background: #141842;
+        color: #fff;
+        box-shadow: 0 15px 30px rgba(20, 24, 66, 0.35);
+      }
+
+      .btn.secondary {
+        background: #fff;
+        color: var(--primary);
+        border: 1px solid var(--border);
+      }
+
+      @media (max-width: 900px) {
+        .panel {
+          padding: 28px;
+        }
+        .detail-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 24px 12px 60px;
+        }
+        .job-card {
+          flex-direction: column;
+        }
+        .job-avatar {
+          width: 52px;
+          height: 52px;
+          border-radius: 18px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <main class="page">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="badge-label">Opportunities</p>
+            <p>Showing 73 results</p>
+          </div>
+          <div class="sort">
+            <span>Sort by</span>
+            <button>Most relevant ▾</button>
+          </div>
+        </div>
+
+        <div class="jobs">
+          <article class="job-card">
+            <div class="job-avatar">S</div>
+            <div class="job-content">
+              <h3>Senior Frontend Developer</h3>
+              <p class="job-meta">Tech Solutions Inc. • 123 Tech Street, Silicon Valley, CA</p>
+              <p class="job-description">
+                We are looking for a skilled Senior Frontend Developer to join our dynamic team. You will be responsible
+                for building and maintaining high-quality web applications.
+              </p>
+              <div class="tag-list">
+                <span class="tag green">Full-time</span>
+                <span class="tag orange">Engineering</span>
+                <span class="tag purple">IT</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-avatar" style="background:#e4f0ff;color:#2f6bff;">D</div>
+            <div class="job-content">
+              <h3>Data Scientist</h3>
+              <p class="job-meta">Data Insights LLC • 456 Data Drive, New York, NY</p>
+              <p class="job-description">
+                Join our team as a Data Scientist and help us turn data into actionable insights. You will work with large
+                datasets to develop predictive models and analyze trends.
+              </p>
+              <div class="tag-list">
+                <span class="tag green">Full-time</span>
+                <span class="tag purple">Data Science</span>
+                <span class="tag purple">Analytics</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-avatar" style="background:#fff0f4;color:#e4517b;">M</div>
+            <div class="job-content">
+              <h3>Marketing Manager</h3>
+              <p class="job-meta">Creative Marketing Co. • 789 Market Lane, Chicago, IL</p>
+              <p class="job-description">
+                We are seeking a talented Marketing Manager to lead our marketing efforts. You will be responsible for
+                developing and executing marketing strategies to drive brand awareness and customer engagement.
+              </p>
+              <div class="tag-list">
+                <span class="tag green">Full-time</span>
+                <span class="tag orange">Marketing</span>
+                <span class="tag orange">Management</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-avatar" style="background:#f2f6ff;color:#4f57c9;">U</div>
+            <div class="job-content">
+              <h3>UX/UI Designer</h3>
+              <p class="job-meta">Design Studio • 321 Creative Blvd, Los Angeles, CA</p>
+              <p class="job-description">
+                We are looking for a creative UX/UI Designer to join our design team. You will be responsible for creating
+                user-centered designs that enhance the user experience across our digital products.
+              </p>
+              <div class="tag-list">
+                <span class="tag green">Full-time</span>
+                <span class="tag blue">Design</span>
+                <span class="tag blue">User Experience</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-avatar" style="background:#fff6e0;color:#f08b1e;">D</div>
+            <div class="job-content">
+              <h3>DevOps Engineer</h3>
+              <p class="job-meta">CloudTech Solutions • 654 Cloud Ave, Seattle, WA</p>
+              <p class="job-description">
+                We are seeking a skilled DevOps Engineer to join our infrastructure team. You will be responsible for
+                automating and optimizing our development and deployment processes.
+              </p>
+              <div class="tag-list">
+                <span class="tag green">Full-time</span>
+                <span class="tag orange">DevOps</span>
+                <span class="tag purple">IT</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="detail-layout">
+          <div class="detail-body">
+            <section>
+              <h2>Description</h2>
+              <p>
+                As a Social Media Assistant, you will work closely with the social media manager or marketing team to
+                execute social media strategies and campaigns. You will be responsible for assisting in the creation and
+                scheduling of engaging content, monitoring social media channels, and interacting with followers. Your
+                primary goal will be to enhance brand visibility, foster positive relationships with the audience, and
+                drive engagement and conversions.
+              </p>
+            </section>
+
+            <section>
+              <h2>Responsibilities</h2>
+              <div class="check-list">
+                <div class="check-item">
+                  <span>✓</span>
+                  Community engagement to ensure that is supported and actively represented online
+                </div>
+                <div class="check-item">
+                  <span>✓</span>
+                  Focus on social media content development and publication
+                </div>
+                <div class="check-item">
+                  <span>✓</span>
+                  Marketing and strategy support
+                </div>
+                <div class="check-item">
+                  <span>✓</span>
+                  Stay on top of trends on social media platforms, and suggest content ideas to the team
+                </div>
+                <div class="check-item">
+                  <span>✓</span>
+                  Engage with online communities
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2>Ideal Candidate we want</h2>
+              <div class="candidate-card">
+                <p>Young (18-24 year old) Female social media manager</p>
+                <p>Passionate & Reliable: Genuine interest in our mission and a strong desire to make a positive impact.</p>
+              </div>
+              <div class="candidate-card">
+                <p>Adaptable, Team Player &amp; Strong Communication Skills</p>
+                <p>
+                  Able to work effectively in diverse teams; contributes positively; flexible and open to embracing new
+                  challenges and shifting priorities; clear verbal and written communication.
+                </p>
+              </div>
+              <div class="candidate-card">
+                <p>Respectful</p>
+                <p>Embraces diversity, inclusive, and treats others with respect. Abides with all our rules and regulations.</p>
+              </div>
+            </section>
+
+            <section>
+              <h2>When &amp; Where</h2>
+              <div class="info-pill">
+                <span class="icon-location">
+                  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9 1.5c-3.59 0-6.5 2.94-6.5 6.56 0 4.19 5.82 9.63 6.07 9.86.23.21.59.21.82 0 .25-.23 6.11-5.67 6.11-9.86C15.5 4.44 12.59 1.5 9 1.5zm0 8.34A2.14 2.14 0 1 1 9 5.56a2.14 2.14 0 0 1 0 4.28z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                The onboarding event for this event will take place on Jan 18th, 2023 in AAU Auditorium.
+              </div>
+            </section>
+          </div>
+
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h3>About</h3>
+              <div class="sidebar-grid">
+                <div class="item"><span>Posted On</span><strong>Jul 1, 2023</strong></div>
+                <div class="item"><span>Deadline</span><strong>Jul 31, 2011</strong></div>
+                <div class="item"><span>Location</span><strong>Addis Ababa</strong></div>
+                <div class="item"><span>Start Date</span><strong>Aug 02, 2023</strong></div>
+                <div class="item"><span>End Date</span><strong>Sep 02, 2023</strong></div>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3>Categories</h3>
+              <div class="tag-list">
+                <span class="tag orange">Marketing</span>
+                <span class="tag blue">Design</span>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3>Required Skills</h3>
+              <div class="tag-list">
+                <span class="skill-chip">Social Media Marketing</span>
+                <span class="skill-chip">English</span>
+                <span class="skill-chip">Copywriting</span>
+              </div>
+            </div>
+
+            <div class="detail-actions">
+              <button class="btn primary">Apply now</button>
+              <button class="btn secondary">Save opportunity</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+</body>
+</html>
+
