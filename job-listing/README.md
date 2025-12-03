@@ -53,7 +53,6 @@ This project helped practice:
 **Job Post Page:**
 <img width="2879" height="1266" alt="image" src="https://github.com/user-attachments/assets/c1d9dbc4-c2d0-4b28-9ba2-8b8dfc7d957c" />
 
-**Error Page:**
-<img width="2879" height="1345" alt="image" src="https://github.com/user-attachments/assets/5cdc29de-52a6-4093-9c45-e682abdabab7" />
+
 
 
