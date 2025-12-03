@@ -30,7 +30,7 @@
         "required_skills": ["Social Media Marketing", "English", "Copywriting"]
       },
       "company": "ABC Media",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyAXPVSrcpzT1hSeo1Y6-bNHao4XoeDZydWQ&s",
+      "image": "/images/social-media.png",
       "work_nature": "In person"
     },
     {
@@ -63,7 +63,7 @@
         "required_skills": ["HTML", "CSS", "JavaScript", "PHP"]
       },
       "company": "Tech Innovators",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEKwJuSwvT3hPDXDG5BACu18Tcq8l7Kl4Sw&s",
+      "image": "/images/web-developer.png",
       "work_nature": "In person"
     },
     {
@@ -102,7 +102,7 @@
         ]
       },
       "company": "Creative Designs Co.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQya418A_lpqYbHbLDDddeYl8WJZJQLSp5SkA&s",
+      "image": "/images/graphic-designer.png",
       "work_nature": "In person"
     },
     {
@@ -136,7 +136,7 @@
         "required_skills": ["SQL", "Python", "Excel", "Statistical Analysis"]
       },
       "company": "Data Insights Inc.",
-      "image": "https://media.licdn.com/dms/image/v2/C510BAQGQu4xyOYJuGw/company-logo_200_200/company-logo_200_200/0/1631398909122/datainsights_di_logo?e=2147483647&v=beta&t=VH3w2Ud8k5Iq5euWN1r3jUj1jGZaM1rinvvKbCYaBwc",
+      "image": "/images/data-analyst.png",
       "work_nature": "In person"
     },
     {
@@ -176,7 +176,7 @@
         ]
       },
       "company": "Customer Care Ltd.",
-      "image": "https://media.licdn.com/dms/image/v2/C4D0BAQG1kXoXIlgD_g/company-logo_200_200/company-logo_200_200/0/1674644147710/customer_care_hub_logo?e=2147483647&v=beta&t=aUN76SyI4tIlMS7Gehi-f7hhnS8pZMMj4Ko7QB9Po7k",
+      "image": "/images/customer-support.png",
       "work_nature": "In person"
     }
   ]
