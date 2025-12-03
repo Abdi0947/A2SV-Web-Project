@@ -48,10 +48,14 @@ This project helped practice:
 ## 🖼 Screenshots
 
 **Home Page:**
-<img width="2814" height="1335" alt="image" src="https://github.com/user-attachments/assets/59a19d62-207d-455c-939e-775c8c4c78e3" />
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
 
 **Job Post Page:**
-<img width="2879" height="1266" alt="image" src="https://github.com/user-attachments/assets/c1d9dbc4-c2d0-4b28-9ba2-8b8dfc7d957c" />
+![alt text](image-3.png)
 
 
 
