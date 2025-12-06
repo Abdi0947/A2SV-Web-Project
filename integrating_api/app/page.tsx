@@ -1,99 +1,65 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 
-import { useEffect, useState } from "react";
-import JobCard from "./components/JobCard";
-import type { StaticImageData } from "next/image";
+interface JobCardProps {
+  id: string;
+  image: { url: string; alt: string };
+  jobTitle: string;
+  jobDescription: string;
+  jobNature: string;
+  categories: string[];
+  organizationName: string;
+  organizationAddress: string;
+}
 
-// Logos
-import socialMediaLogo from "../assets/socialmedia.png";
-import webLogo from "../assets/web.avif";
-import graphicsLogo from "../assets/graphicsdesigner.png";
-import dataAnalystLogo from "../assets/dataanalayst.jpg";
-import placeholderLogo from "../assets/placeholder.png";
-
-const logos: StaticImageData[] = [
-  socialMediaLogo,
-  webLogo,
-  graphicsLogo,
-  dataAnalystLogo,
-  placeholderLogo,
-];
-
-export default function Home() {
-  const [jobs, setJobs] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchOpportunities() {
-      const API = "https://akil-backend.onrender.com/opportunities/search";
-      try {
-        const res = await fetch(API);
-        if (!res.ok) throw new Error(`Failed to fetch API: ${res.status}`);
-        const data = await res.json();
-        const opportunities = data?.opportunities ?? data?.data ?? data ?? [];
-        if (!Array.isArray(opportunities) || opportunities.length === 0) {
-          throw new Error("No opportunities returned from API");
-        }
-        const mapped = opportunities.map((item: any, index: number) => ({
-          id: item.id ?? index,
-          title: item.title ?? item.name ?? item.position ?? "No title",
-          description: item.description ?? item.summary ?? "No description",
-          work_nature: item.work_nature ?? item.type ?? "Not specified",
-          about: {
-            categories: item.categories ?? item.tags ?? [],
-            location: item.location ?? item.about?.location ?? "Unknown",
-          },
-          company: item.company ?? item.organization ?? "Unknown",
-        }));
-        setJobs(mapped);
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message || "Unknown error occurred");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchOpportunities();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="animate-pulse text-gray-500 text-lg">Loading opportunities...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex flex-col justify-center items-center h-screen">
-        <h1 className="text-2xl font-bold text-red-600 mb-4">Error loading jobs</h1>
-        <p className="text-gray-700">{error}</p>
-      </div>
-    );
-  }
-
+export default function JobCard({
+  id,
+  image,
+  jobTitle,
+  jobDescription,
+  jobNature,
+  categories,
+  organizationName,
+  organizationAddress,
+}: JobCardProps) {
   return (
-    <main className="flex flex-col max-w-5xl m-auto">
-      <h1 className="text-blue-950 font-black text-3xl mt-16 mb-4">Opportunities</h1>
-      <p className="text-gray-500 mb-8">Showing {jobs.length} results</p>
-      <div className="flex flex-col gap-8">
-        {jobs.map((job, index) => (
-          <JobCard
-            key={index}
-            id={job.id}
-            image={{ alt: job.company ?? "Organization logo", url: logos[index % logos.length].src }}
-            jobTitle={job.title}
-            jobDescription={job.description}
-            jobNature={job.work_nature}
-            categories={job.about?.categories ?? []}
-            organizationAddress={job.about?.location ?? ""}
-            organizationName={job.company}
-          />
-        ))}
+    <Link href={`/job/${id}`}>
+      <div className="border rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex gap-4 cursor-pointer">
+        <div className="w-20 h-20 relative flex-shrink-0">
+          {image.url ? (
+            <Image
+              src={image.url}
+              alt={image.alt}
+              fill
+              className="object-cover rounded-md"
+            />
+          ) : (
+            <div className="w-20 h-20 bg-gray-200 rounded-md flex items-center justify-center text-gray-500 text-sm">
+              No Image
+            </div>
+          )}
+        </div>
+
+        <div className="flex-1 flex flex-col gap-2">
+          <h2 className="font-bold text-xl">{jobTitle}</h2>
+          <p className="text-gray-500">{organizationName}</p>
+          <p className="text-gray-400 text-sm">{organizationAddress}</p>
+          <p className="text-gray-700 line-clamp-3">{jobDescription}</p>
+
+          {categories.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-2">
+              {categories.map((cat) => (
+                <span
+                  key={cat}
+                  className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
+                >
+                  {cat}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </main>
+    </Link>
   );
 }
