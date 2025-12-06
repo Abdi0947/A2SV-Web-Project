@@ -9,15 +9,20 @@ This project demonstrates:
 
 - A reusable Job Card component
 - A complete Job Listing Dashboard
-- UI built based on the provided Figma design
-- Dummy data populated from the given JSON
-- Styled completely using Tailwind CSS
+- **API Integration** - Fetches real-time data from Akil Backend API
+- Dynamic routing for individual job details
+- Error handling for API requests
+- UI built with Tailwind CSS
+- Responsive design with Font Awesome icons
 
 ## 🧠 Technologies Used
 
-- React
-- Next.js
-- Tailwind CSS
+- **React** - UI library
+- **Next.js 16** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Font Awesome** - Icon library
+- **Akil Backend API** - RESTful API for job opportunities data
 
 ## 📥 Installation & Setup
 
@@ -35,24 +40,70 @@ npm run dev
 The app will run at:  
 👉 http://localhost:3000/
 
+## 🔌 API Integration
+
+This application integrates with the **Akil Backend API** to fetch real-time job opportunities:
+
+- **Base URL**: `https://akil-backend.onrender.com/`
+- **Endpoints Used**:
+  - `GET /opportunities/search` - Fetches all available opportunities
+  - `GET /opportunities/:id` - Fetches a specific opportunity by ID
+
+### API Features:
+- ✅ Server-side data fetching using Next.js App Router
+- ✅ Error handling for failed API requests
+- ✅ Graceful fallback for missing data
+- ✅ Data mapping to match component structure
+- ✅ Cache revalidation (60 seconds)
+
 ## 📚 Learning Objectives
 
 This project helped practice:
 
 - Building reusable components with Next.js
 - Using Tailwind CSS for UI design
-- Implementing layouts based on Figma design
-- Handling and mapping static JSON data
+- **Integrating RESTful APIs with fetch()**
+- **Handling API errors and edge cases**
+- **Server-side data fetching in Next.js App Router**
+- Mapping and transforming API data structures
 - Structuring scalable frontend applications using App Router
+- Dynamic routing with Next.js
 
 ## 🖼 Screenshots
 
-**Home Page:**
-![alt text](image.png)
+### Home Page - Opportunities Listing
 
-![alt text](image-1.png)
+**Description**: The main page displays all available job opportunities fetched from the API. Each job card shows the company logo, job title, organization name, location, description, work nature, and relevant categories. The page includes a header showing the total number of results and a sort dropdown (UI ready for future implementation).
 
-![alt text](image-2.png)
+![Home Page - Full View](image.png)
 
-**Job Post Page:**
-![alt text](image-3.png)
+**Features**:
+- Displays all opportunities from the API
+- Shows company logos from local assets
+- Color-coded category tags
+- Responsive card layout with hover effects
+- Error handling for failed API requests
+
+![Home Page - Job Cards](image-1.png)
+
+**Additional View**: Close-up of individual job cards showing the detailed information layout including work nature badges and category tags.
+
+![Home Page - Header Section](image-2.png)
+
+**Header Section**: Shows the "Opportunities" title, result count, and sort dropdown functionality.
+
+### Job Detail Page - Individual Opportunity
+
+**Description**: The detail page shows comprehensive information about a specific job opportunity, including title, description, responsibilities, ideal candidate requirements, location details, posting dates, categories, and required skills. The page includes a back button to return to the main listing.
+
+![Job Detail Page](image-3.png)
+
+**Features**:
+- Fetches opportunity data by ID from the API
+- Displays all job information in a two-column layout
+- Shows responsibilities with checkmark icons
+- Ideal candidate section with age, gender, and traits
+- About section with posting date, deadline, location, and dates
+- Category tags with color coding
+- Required skills displayed as badges
+- 404 error page for invalid opportunity IDs
