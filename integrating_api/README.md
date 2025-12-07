@@ -1,55 +1,42 @@
-# A2SV Job Listing App - API Integration
+# 🎯 Opportunities App
 
-A Next.js application that integrates with the Akil Backend API to display real-time job opportunities. Built with TypeScript, Tailwind CSS, and Redux Toolkit Query (RTK Query) for efficient client-side data fetching.
+Fetch and display opportunities from an API in a card-based UI.
 
-## 🚀 Quick Start
+## ✨ Features
+
+- 🔄 Fetch opportunities from `https://akil-backend.onrender.com/opportunities/search`
+- 🎴 Display each opportunity in a card (title, description, etc.)
+- ⚠️ Handle API errors gracefully
+
+## 📦 Installation
 
 ```bash
-# Install dependencies
+git clone https://github.com/yourusername/opportunities-app.git
+cd opportunities-app
 npm install
-
-# Run development server
-npm run dev
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 🚀 Usage
 
-## 📋 Features
-
-- ✅ Real-time job listings from Akil Backend API
-- ✅ Job detail pages with comprehensive information
-- ✅ Client-side API integration using RTK Query
-- ✅ Responsive design with Tailwind CSS
-- ✅ Error handling and loading states
-- ✅ TypeScript for type safety
-
-## 🛠 Tech Stack
-
-- **Next.js 16** - React framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **RTK Query** - Data fetching and caching
-- **Axios** - HTTP client
-
-## 📖 Documentation
-
-For detailed documentation, features, and API information, see [app/README.md](./app/README.md).
+- 📊 Data loads automatically from the API.
+- 💼 Each card shows relevant opportunity details.
+- ❌ Errors are displayed if API requests fail.
 
 ## 📸 Screenshots
 
-Screenshots are available in `public/screenshots/`:
-- Home page with job listings
-- Job detail page
-- Loading and error states
+### ⏳ Loading
 
-## 🔌 API
+![Loading](app/loading.png)
 
-- **Base URL**: `https://akil-backend.onrender.com/`
-- **Endpoints**:
-  - `GET /opportunities/search` - Get all opportunities
-  - `GET /opportunities/:id` - Get opportunity by ID
+### 🏠 Home
 
-## 📝 License
+![Home Page](app/image.png)
 
-This project is part of the A2SV Web Project collection.
+![Home Page View 1](app/image-1.png)
 
+![Home Page View 2](app/image-2.png)
+
+### ⚠️ Error
+
+![Error Page](app/image-3.png)
