@@ -3,54 +3,57 @@ import JobListingInterface from "../JobListingInterface";
 import Link from "next/link";
 import Image from "next/image";
 
+// Category to color mapping
+export const Category2Color = new Map<string, string>([
+  ["Customer Service", "text-blue-500"],
+  ["Data Science", "text-yellow-500"],
+  ["Support", "text-cyan-500"],
+  ["Analytics", "text-purple-500"],
+  ["Design", "text-pink-500"],
+  ["Art", "text-emerald-400"],
+  ["IT", "text-amber-700"],
+  ["Development", "text-orange-500"],
+  ["Marketing", "text-violet-700"]
+]);
+
 const JobCard = (job: JobListingInterface) => {
   return (
-    <div className="border-gray-300 border rounded-4xl mr-80 ml-30 mt-5 mb-5 p-5 hover:bg-gray-300">
-      <div className="p-2 flex gap-6">
-        <div className="w-50 h-20 overflow-hidden">
-          <Image
-            src={job.logoUrl}
-            alt={`${job.title} logo`}
-            width={100}
-            height={100}
-            className="object-cover"
-          />
+    <div className="border-2 rounded-4xl border-gray-200 p-8 flex gap-4 hover:shadow-2xl transition ease-in">
+      <div>
+        <img 
+          src={job.logoUrl || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64"%3E%3Crect width="64" height="64" fill="%23e5e7eb"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-size="10"%3ELogo%3C/text%3E%3C/svg%3E'} 
+          alt={`${job.title} logo`} 
+          className="max-w-16 h-16 object-contain"
+        />
+      </div>
+      <div className="flex flex-col gap-2.5 flex-1">
+        <Link href={`/job/${job.id}`} className="font-bold text-2xl hover:cursor-pointer hover:text-blue-600 transition">
+          {job.title}
+        </Link>
+        <div className="flex flex-row gap-2 text-gray-500 text">
+          <h2>{job.orgName}</h2>
+          <span>•</span>
+          <h2>{job.location}</h2>
         </div>
-        <div className="">
-          <Link
-            href={`/job/${job.id}`}
-            className="text-[20px] font-semibold text-[#25324B] mb-1"
-          >
-            {job.title}
-          </Link>
-          <p className="text-[#7C8493] mb-2 text-[16px]">
-            {job.orgName} <span className="text-4xl relative bottom-1">.</span>{" "}
-            {job.location}
-          </p>
-          <p>{job.description}</p>
-          <div className="flex align-center mt-2">
-            <div className="text-[#56CDAD] bg-green-100 p-2 rounded-3xl text-center text-sm font-semibold">
-              {job.opType}
-            </div>
-            <div className="h-9 w-0.5 bg-gray-300 mx-3"></div>
-            <div className="flex gap-2 align-center justify-center  text-sm">
-              {job.categories.map((category, idx) => {
-                const isEven = idx % 2 === 0;
-                const colorClasses = isEven
-                  ? "text-amber-400"
-                  : "text-[#4640DE]";
-
-                return (
-                  <div
-                    key={idx}
-                    className={`${colorClasses} min-w-20 text-center border-2 pt-2 pb-2 pr-4 pl-4 rounded-3xl font-semibold`}
-                  >
-                    {category}
-                  </div>
-                );
-              })}
-            </div>
+        <p className="text-gray-700 line-clamp-2">
+          {job.description}
+        </p>
+        <div className="flex flex-row gap-2.5 items-center font-medium text-xs mt-3 flex-wrap">
+          <div className="bg-green-100 py-2 px-3 rounded-full">
+            <span className="text-green-500">{job.opType}</span>
           </div>
+          <div className="border h-1/1 border-gray-300"></div>
+          {job.categories.map((category, catIndex) => (
+            <span
+              className={
+                "min-w-16 border rounded-full text-center p-2 " + 
+                (Category2Color.get(category) || "text-gray-500")
+              }
+              key={catIndex}
+            >
+              {category}
+            </span>
+          ))}
         </div>
       </div>
     </div>

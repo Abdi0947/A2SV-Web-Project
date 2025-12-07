@@ -40,16 +40,20 @@ export default function Home() {
 
   return (
     <>
-      {jobs && (
-        <>
-          {/* Call the header component and pass the length */}
-          {Header(len)}
-          {/* Call the JobCard component for each job to be rendered */}
-          {jobsWithLogo.map((job: JobListingInterface) => (
-            <JobCard key={job.id} {...job} />
-          ))}
-        </>
-      )}
+      <main className="flex flex-col max-w-5xl m-auto">
+        {jobs && (
+          <>
+            {/* Call the header component and pass the length */}
+            {Header(len)}
+            {/* Call the JobCard component for each job to be rendered */}
+            <div className="m-8 flex flex-col gap-12">
+              {jobsWithLogo.map((job: JobListingInterface) => (
+                <JobCard key={job.id} {...job} />
+              ))}
+            </div>
+          </>
+        )}
+      </main>
     </>
   );
 }
