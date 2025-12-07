@@ -62,11 +62,21 @@ export default function JobDetail() {
       <p className="text-gray-500 mb-2">{job.company}</p>
       <p className="text-gray-400 mb-4">{job.about.location}</p>
 
-      {job.image && (
-        <div className="w-full h-64 relative mb-6">
-          <Image src={job.image} alt={job.company} fill className="object-cover rounded-md" />
-        </div>
-      )}
+      {job.image ? (
+  <div className="w-full h-64 relative mb-6">
+    <Image
+      src={job.image.startsWith("http") ? job.image : `/assets/${job.image}`}
+      alt={job.company}
+      fill
+      className="object-cover rounded-md"
+    />
+  </div>
+) : (
+  <div className="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 rounded-md mb-6">
+    No Image
+  </div>
+)}
+
 
       <h2 className="text-xl font-semibold mb-2">Description</h2>
       <p className="text-gray-700 mb-4">{job.description}</p>

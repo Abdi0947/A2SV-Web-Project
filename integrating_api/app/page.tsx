@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface JobCardProps {
   id: string;
-  image: { url: string; alt: string };
+  image?: { url?: string; alt: string }; 
   jobTitle: string;
   jobDescription: string;
   jobNature: string;
