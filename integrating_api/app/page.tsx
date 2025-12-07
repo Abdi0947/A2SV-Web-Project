@@ -1,65 +1,55 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+import JobCard from "./components/JobCard";
+import JobListingInterface from "./JobListingInterface";
+import Header from "./components/Header";
+import { useGetAllOpportunitiesQuery } from "./service/data";
+import Loading from "./components/Loading";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-interface JobCardProps {
-  id: string;
-  image?: { url?: string; alt: string }; 
-  jobTitle: string;
-  jobDescription: string;
-  jobNature: string;
-  categories: string[];
-  organizationName: string;
-  organizationAddress: string;
-}
+export default function Home() {
+  const router = useRouter();
+  // Get all opportunities
+  const {
+    data: jobs = [],
+    isError,
+    isLoading,
+  } = useGetAllOpportunitiesQuery(undefined as any);
 
-export default function JobCard({
-  id,
-  image,
-  jobTitle,
-  jobDescription,
-  jobNature,
-  categories,
-  organizationName,
-  organizationAddress,
-}: JobCardProps) {
+  // Turn the fetched data into an array
+  const jobsList: any[] = Array.isArray(jobs)
+    ? jobs
+    : Array.isArray((jobs as any)?.data)
+    ? (jobs as any).data
+    : [];
+
+  // Find the total number of opportunities fetched
+  const len = jobsList.length;
+
+  const jobsWithLogo = jobsList.filter((j) => (j.logoUrl ?? "").trim() !== "");
+
+  //If an error has occured while fetching the data, route to the error page
+  useEffect(() => {
+    if (!isLoading && isError) {
+      router.push("/error");
+    }
+  }, [isLoading, isError, router]);
+
+  //If the page is loading, render the loading component
+  if (isLoading) return <Loading />;
+
   return (
-    <Link href={`/job/${id}`}>
-      <div className="border rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex gap-4 cursor-pointer">
-        <div className="w-20 h-20 relative flex-shrink-0">
-          {image.url ? (
-            <Image
-              src={image.url}
-              alt={image.alt}
-              fill
-              className="object-cover rounded-md"
-            />
-          ) : (
-            <div className="w-20 h-20 bg-gray-200 rounded-md flex items-center justify-center text-gray-500 text-sm">
-              No Image
-            </div>
-          )}
-        </div>
-
-        <div className="flex-1 flex flex-col gap-2">
-          <h2 className="font-bold text-xl">{jobTitle}</h2>
-          <p className="text-gray-500">{organizationName}</p>
-          <p className="text-gray-400 text-sm">{organizationAddress}</p>
-          <p className="text-gray-700 line-clamp-3">{jobDescription}</p>
-
-          {categories.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-2">
-              {categories.map((cat) => (
-                <span
-                  key={cat}
-                  className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
-                >
-                  {cat}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </Link>
+    <>
+      {jobs && (
+        <>
+          {/* Call the header component and pass the length */}
+          {Header(len)}
+          {/* Call the JobCard component for each job to be rendered */}
+          {jobsWithLogo.map((job: JobListingInterface) => (
+            <JobCard key={job.id} {...job} />
+          ))}
+        </>
+      )}
+    </>
   );
 }

@@ -1,71 +1,60 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+import JobListingInterface from "../JobListingInterface";
 import Link from "next/link";
+import Image from "next/image";
 
-interface JobCardProps {
-  id: string | number;
-  image: { alt: string; url: string };
-  jobTitle: string;
-  jobDescription: string;
-  jobNature: string;
-  categories: string[];
-  organizationAddress: string;
-  organizationName: string;
-}
-
-export default function JobCard({
-  id,
-  image,
-  jobTitle,
-  jobDescription,
-  jobNature,
-  categories,
-  organizationAddress,
-  organizationName,
-}: JobCardProps) {
+const JobCard = (job: JobListingInterface) => {
   return (
-    <Link href={`/${id.toString()}`} className="block">
-      <div className="border rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex gap-4 cursor-pointer">
-        <div className="w-20 h-20 relative flex-shrink-0">
-          {image.url ? (
-            <Image
-              src={image.url}
-              alt={image.alt}
-              fill
-              className="object-cover rounded-md"
-            />
-          ) : (
-            <div className="w-20 h-20 bg-gray-200 rounded-md flex items-center justify-center text-gray-500 text-sm">
-              No Image
-            </div>
-          )}
+    <div className="border-gray-300 border rounded-4xl mr-80 ml-30 mt-5 mb-5 p-5 hover:bg-gray-300">
+      <div className="p-2 flex gap-6">
+        <div className="w-50 h-20 overflow-hidden">
+          <Image
+            src={job.logoUrl}
+            alt={`${job.title} logo`}
+            width={100}
+            height={100}
+            className="object-cover"
+          />
         </div>
-
-        <div className="flex-1 flex flex-col gap-2">
-          <h2 className="font-bold text-xl">{jobTitle}</h2>
-          <p className="text-gray-600 line-clamp-2">{jobDescription}</p>
-
-          <div className="flex gap-2 text-sm text-gray-500 mt-1">
-            {jobNature && <span>{jobNature}</span>}
-            {organizationAddress && <span>{organizationAddress}</span>}
-          </div>
-
-          {categories.length > 0 && (
-            <div className="flex gap-2 mt-2 flex-wrap">
-              {categories.map((cat, i) => (
-                <span
-                  key={i}
-                  className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
-                >
-                  {cat}
-                </span>
-              ))}
+        <div className="">
+          <Link
+            href={`/job/${job.id}`}
+            className="text-[20px] font-semibold text-[#25324B] mb-1"
+          >
+            {job.title}
+          </Link>
+          <p className="text-[#7C8493] mb-2 text-[16px]">
+            {job.orgName} <span className="text-4xl relative bottom-1">.</span>{" "}
+            {job.location}
+          </p>
+          <p>{job.description}</p>
+          <div className="flex align-center mt-2">
+            <div className="text-[#56CDAD] bg-green-100 p-2 rounded-3xl text-center text-sm font-semibold">
+              {job.opType}
             </div>
-          )}
+            <div className="h-9 w-0.5 bg-gray-300 mx-3"></div>
+            <div className="flex gap-2 align-center justify-center  text-sm">
+              {job.categories.map((category, idx) => {
+                const isEven = idx % 2 === 0;
+                const colorClasses = isEven
+                  ? "text-amber-400"
+                  : "text-[#4640DE]";
+
+                return (
+                  <div
+                    key={idx}
+                    className={`${colorClasses} min-w-20 text-center border-2 pt-2 pb-2 pr-4 pl-4 rounded-3xl font-semibold`}
+                  >
+                    {category}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
-}
+};
+
+export default JobCard;
