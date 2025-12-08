@@ -9,7 +9,6 @@ This project demonstrates:
 
 - A reusable Job Card component
 - A complete Job Listing Dashboard
-- **API Integration** - Fetches real-time data from Akil Backend API
 - Dynamic routing for individual job details
 - Error handling for API requests
 - UI built with Tailwind CSS
@@ -22,7 +21,7 @@ This project demonstrates:
 - **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS** - Utility-first CSS framework
 - **Font Awesome** - Icon library
-- **Akil Backend API** - RESTful API for job opportunities data
+  
 
 ## 📥 Installation & Setup
 
@@ -40,21 +39,6 @@ npm run dev
 The app will run at:  
 👉 http://localhost:3000/
 
-## 🔌 API Integration
-
-This application integrates with the **Akil Backend API** to fetch real-time job opportunities:
-
-- **Base URL**: `https://akil-backend.onrender.com/`
-- **Endpoints Used**:
-  - `GET /opportunities/search` - Fetches all available opportunities
-  - `GET /opportunities/:id` - Fetches a specific opportunity by ID
-
-### API Features:
-- ✅ Server-side data fetching using Next.js App Router
-- ✅ Error handling for failed API requests
-- ✅ Graceful fallback for missing data
-- ✅ Data mapping to match component structure
-- ✅ Cache revalidation (60 seconds)
 
 ## 📚 Learning Objectives
 
@@ -99,7 +83,6 @@ This project helped practice:
 ![Job Detail Page](image-3.png)
 
 **Features**:
-- Fetches opportunity data by ID from the API
 - Displays all job information in a two-column layout
 - Shows responsibilities with checkmark icons
 - Ideal candidate section with age, gender, and traits
