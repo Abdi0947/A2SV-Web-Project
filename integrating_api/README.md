@@ -12,7 +12,7 @@ Fetch and display opportunities from an API in a card-based UI.
 
 ```bash
 git clone https://github.com/Abdi0947/A2SV-web-Project/integrating_api.git
-cd opportunities-app
+cd integrating_api
 npm install
 npm start
 ```
