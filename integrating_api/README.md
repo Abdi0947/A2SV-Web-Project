@@ -1,5 +1,9 @@
 # 🎯 Opportunities App
 
+This project is a Job Listing Application Dashboard built using Next.js and Tailwind CSS.  
+It is developed and maintained by **Abdi Debela**.
+
+
 Fetch and display opportunities from an API in a card-based UI.
 
 ## ✨ Features
