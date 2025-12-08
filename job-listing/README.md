@@ -46,9 +46,7 @@ This project helped practice:
 
 - Building reusable components with Next.js
 - Using Tailwind CSS for UI design
-- **Integrating RESTful APIs with fetch()**
 - **Handling API errors and edge cases**
-- **Server-side data fetching in Next.js App Router**
 - Mapping and transforming API data structures
 - Structuring scalable frontend applications using App Router
 - Dynamic routing with Next.js
