@@ -1,48 +1,26 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Check if user is already signed in
-    const currentUser = localStorage.getItem("currentUser");
-    if (currentUser) {
-      const userData = JSON.parse(currentUser);
-      if (userData.isAuthenticated) {
-        router.push("/dashboard");
-      }
-    }
-  }, [router]);
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4">
-      <div className="max-w-md w-full text-center">
-        <h1 className="text-4xl font-bold mb-4">
-          Welcome to the User Authentication App
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-white">
+      <div className="text-center px-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Welcome to A2SV Task 8
         </h1>
-        <p className="text-gray-600 mb-8">
-          Please sign in to your account or create a new one to get started.
+        <p className="text-xl text-indigo-600 font-semibold mb-6">
+          User Authentication
         </p>
+        
 
-        <div className="flex flex-col gap-4">
+        <div className="flex justify-center gap-4">
           <Link
-            href="/SignIn"
-            className="bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+            href="/auth"
+            className="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition"
           >
-            Sign In
-          </Link>
-          <Link
-            href="/SignUp"
-            className="bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
-          >
-            Sign Up
+            Get Started
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
