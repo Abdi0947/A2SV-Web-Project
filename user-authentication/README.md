@@ -171,18 +171,19 @@ http://localhost:30### ✍️ Sign Up
 - **Tailwind CSS**
 - *TP email delivery
 
+ 🖼️ Screenshots
 
 ## 🖼️ Screenshots
 
-![alt text](image.png)
+![Login Page](./image.png)
 
-![alt text](image-1.png)
+![OTP Verification](./image-1.png)
 
-![alt text](image-2.png)
+![Dashboard](./image-2.png)
 
-![alt text](image-3.png)
+![Google Auth](./image-3.png)
 
-![alt text](image-4.png)
+![Email Verification](./image-4.png)
 
-![alt text](image-5.png)
+![Sample Job Listings](./image-5.png)
 
