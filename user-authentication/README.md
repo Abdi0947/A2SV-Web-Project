@@ -175,7 +175,8 @@ http://localhost:30### ✍️ Sign Up
 
 ## 🖼️ Screenshots
 
-![Dashboard](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image.png?raw=true)
+![Description](https://raw.githubusercontent.com/Abdi0947/A2SV-Web-Project/main/user-authentication/image.png)
+
 
 
 ![alt text](image-1.png)
