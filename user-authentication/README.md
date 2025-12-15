@@ -175,7 +175,8 @@ http://localhost:30### ✍️ Sign Up
 
 ## 🖼️ Screenshots
 
-<img width="1280" height="517" alt="image" src="https://github.com/user-attachments/assets/eed9f62b-30bb-4312-89ff-8feca26478c4" />
+![Project Image](/public/image-1.png)
+
 
 
 
