@@ -173,10 +173,15 @@ http://localhost:30### ✍️ Sign Up
 
 ## 🖼️ Screenshots
 
-![Login Page](user-authentication/image.png)
-![OTP Verification](user-authentication/image-1.png)
-![Dashboard](user-authentication/image-2.png)
-![Google Auth](user-authentication/image-3.png)
-![Email Verification](user-authentication/image-4.png)
-![Sample Job Listings](user-authentication/image-5.png)
+![Login Page](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image.png?raw=true)
+
+![OTP Verification](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image-1.png?raw=true)
+
+![Dashboard](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image-2.png?raw=true)
+
+![Google Auth](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image-3.png?raw=true)
+
+![Email Verification](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image-4.png?raw=true)
+
+![Sample Job Listings](https://github.com/Abdi0947/A2SV-Web-Project/blob/main/user-authentication/image-5.png?raw=true)
 
