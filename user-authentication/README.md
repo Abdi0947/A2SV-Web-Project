@@ -175,7 +175,8 @@ http://localhost:30### ✍️ Sign Up
 
 ## 🖼️ Screenshots
 
-![User Authentication](user-authentication/image.png)
+![User Authentication](./image.png)
+
 
 ![alt text](image-1.png)
 
