@@ -55,6 +55,8 @@ Verified users are automatically redirected to the dashboard after successful au
   * Clean, modern auth UI aligned with the provided reference
 
 ---
+Screenshots
+
 ![alt text](image.png)
 
 ![alt text](image-1.png)
